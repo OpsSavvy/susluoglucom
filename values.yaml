@@ -1,0 +1,13 @@
+wordpress:
+  ingress:
+    enabled: true
+    host: susluoglu.com
+    ingressClassName: nginx
+  storage: 10Gi
+mysql:
+  storage: 10Gi
+  secret:
+    name: mysql-wordpress-secret
+    rootPasswordKey: rootpassword
+    passwordKey: password
+

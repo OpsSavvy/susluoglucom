@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - sealedsecret.yaml
+
+helmCharts:
+  - name: wordpress
+    releaseName: susluoglucom
+    namespace: susluoglucom
+    repo: https://opssavvy.github.io/helmcharts
+    version: 0.1.2
+    valuesFile: ./values.yaml
